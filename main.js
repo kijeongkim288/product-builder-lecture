@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 numbers.add(randomNumber);
             }
             const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+            console.log(`Set ${i + 1}:`, sortedNumbers); // 디버깅을 위한 로그
             const lottoSet = document.createElement('div');
             lottoSet.classList.add('lotto-set');
             sortedNumbers.forEach((number) => {
