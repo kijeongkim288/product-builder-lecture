@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High-Low Card Game</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨기</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>High-Low Card Game</h1>
     <div class="container">
-      <div class="card-container">
-        <div class="card" id="current-card"></div>
-      </div>
-      <div id="score">Score: 0</div>
-      <div class="buttons">
-        <button id="higher-btn">Higher</button>
-        <button id="lower-btn">Lower</button>
-      </div>
-      <div class="card-container">
-        <div class="card" id="next-card"></div>
-      </div>
-      <div id="message"></div>
-      <button id="restart-btn" style="display: none;">Play Again</button>
+        <h1>로또 번호 추첨기</h1>
+        <div id="numbers" class="numbers-container"></div>
+        <button id="generate-btn">번호 생성</button>
     </div>
-  </main>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <script src="main.js?v=2"></script>
 </body>
 </html>
