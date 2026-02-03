@@ -2,6 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM이 완전히 로드된 후, 필요한 HTML 요소를 찾습니다.
     const generateBtn = document.getElementById('generate-btn');
     const numbersContainer = document.getElementById('numbers');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // 테마 설정
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+            themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
+        }
+        localStorage.setItem('theme', theme);
+    });
 
     // 버튼이 존재하는지 확인하고, 존재한다면 클릭 이벤트를 연결합니다.
     if (generateBtn) {

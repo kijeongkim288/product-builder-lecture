@@ -1,26 +1,55 @@
+:root {
+    --background-color-light: #f0f2f5;
+    --container-background-light: #ffffff;
+    --text-color-light: #333;
+    --background-color-dark: #2c2c2c;
+    --container-background-dark: #3a3a3a;
+    --text-color-dark: #f0f2f5;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    --background-color-light: var(--background-color-dark);
+    --container-background-light: var(--container-background-dark);
+    --text-color-light: var(--text-color-dark);
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: var(--container-background-light);
     padding: 2rem 3rem;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 500px;
     width: 100%;
+    transition: background-color 0.3s;
 }
 
 h1 {
-    color: #333;
+    color: var(--text-color-light);
     margin-bottom: 2rem;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
 }
 
 .numbers-container {
@@ -75,3 +104,4 @@ h1 {
         opacity: 1;
     }
 }
+
