@@ -1,22 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const recommendBtn = document.getElementById('recommend-btn');
-    const menuElement = document.getElementById('menu');
+    const form = document.getElementById('partnership-form');
+    const formResponse = document.getElementById('form-response');
 
-    const dinnerMenus = [
-        "치킨", "피자", "삼겹살", "족발", "보쌈",
-        "떡볶이", "라면", "김치찌개", "된장찌개", "부대찌개",
-        "초밥", "파스타", "햄버거", "샌드위치", "카레"
-    ];
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-    if (recommendBtn) {
-        recommendBtn.addEventListener('click', recommendMenu);
+            // Here you would typically send the form data to a backend or a service like Formsfree
+            // For demonstration, we'll just show a success message.
+
+            formResponse.textContent = '문의가 성공적으로 접수되었습니다. 감사합니다!';
+            formResponse.style.color = 'green';
+            form.reset(); // Clear the form
+        });
     } else {
-        console.error('ID "recommend-btn"을 가진 요소를 찾을 수 없습니다.');
-    }
-
-    function recommendMenu() {
-        const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
-        const recommendedMenu = dinnerMenus[randomIndex];
-        menuElement.textContent = recommendedMenu;
+        console.error('ID "partnership-form"을 가진 요소를 찾을 수 없습니다.');
     }
 });
