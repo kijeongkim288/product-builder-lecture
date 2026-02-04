@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const rollBtn = document.getElementById('roll-btn');
-    const diceElement = document.getElementById('dice');
+    const recommendBtn = document.getElementById('recommend-btn');
+    const menuElement = document.getElementById('menu');
 
-    if (rollBtn) {
-        rollBtn.addEventListener('click', rollDice);
+    const dinnerMenus = [
+        "치킨", "피자", "삼겹살", "족발", "보쌈",
+        "떡볶이", "라면", "김치찌개", "된장찌개", "부대찌개",
+        "초밥", "파스타", "햄버거", "샌드위치", "카레"
+    ];
+
+    if (recommendBtn) {
+        recommendBtn.addEventListener('click', recommendMenu);
     } else {
-        console.error('ID "roll-btn"을 가진 요소를 찾을 수 없습니다.');
+        console.error('ID "recommend-btn"을 가진 요소를 찾을 수 없습니다.');
     }
 
-    function rollDice() {
-        const randomNumber = Math.floor(Math.random() * 6) + 1;
-        diceElement.textContent = randomNumber;
+    function recommendMenu() {
+        const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+        const recommendedMenu = dinnerMenus[randomIndex];
+        menuElement.textContent = recommendedMenu;
     }
 });
